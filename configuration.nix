@@ -13,13 +13,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -108,6 +101,14 @@
       #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       #  wget
     ];
+
+  networking.interfaces.eth0.ipv4.addresses = [ {
+    address = "192.168.1.2";
+    prefixLength = 24;
+  } ];
+  networking.defaultGateway = "192.168.1.254";
+  networking.nameservers = [ "8.8.8.8" ];
+  networking.hostName = "homelab";
 
   services.openssh = {
     enable = true;
