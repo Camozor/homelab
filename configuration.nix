@@ -77,7 +77,7 @@
     isNormalUser = true;
     description = "camille";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ neovim kitty git ];
+    packages = with pkgs; [ neovim kitty git nixfmt ];
   };
 
   # Enable automatic login for the user.
@@ -102,10 +102,10 @@
       #  wget
     ];
 
-  networking.interfaces.eth0.ipv4.addresses = [ {
+  networking.interfaces.eth0.ipv4.addresses = [{
     address = "192.168.1.2";
     prefixLength = 24;
-  } ];
+  }];
   networking.defaultGateway = "192.168.1.254";
   networking.nameservers = [ "8.8.8.8" ];
   networking.hostName = "homelab";
@@ -115,12 +115,10 @@
     ports = [ 22 ];
     settings = {
       PasswordAuthentication = true;
-      AllowUsers =
-        null; # Allows all users by default. Can be [ "user1" "user2" ]
+      AllowUsers = null;
       UseDns = true;
       X11Forwarding = false;
-      PermitRootLogin =
-        "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+      PermitRootLogin = "prohibit-password";
     };
   };
 
