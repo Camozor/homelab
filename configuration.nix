@@ -77,7 +77,7 @@
     isNormalUser = true;
     description = "camille";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ neovim kitty git nixfmt ];
+    packages = with pkgs; [ ];
   };
 
   # Enable automatic login for the user.
@@ -96,11 +96,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs;
-    [
-      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      #  wget
-    ];
+  environment.systemPackages = with pkgs; [ neovim kitty git htop nixfmt ];
 
   networking.interfaces.eth0.ipv4.addresses = [{
     address = "192.168.1.2";
@@ -129,5 +125,10 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
+
+  # k3s
+  networking.firewall.allowedTCPPorts = [ 6443 ];
+  services.k3s.enable = true;
+  services.k3s.role = "server";
 
 }
