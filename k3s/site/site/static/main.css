@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+.header {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,1,37,1) 4%, rgba(64,5,44,1) 16%, rgba(9,6,72,1) 30%, rgba(87,7,47,1) 40%, rgba(104,8,49,1) 48%, rgba(242,0,91,1) 56%, rgba(107,32,74,1) 85%, rgba(0,212,255,1) 100%);
+}
+
+.container {
+  padding: 16px;
+}
+
+.rounded {
+  height: 300px;
+  width: auto;
+  border-radius: 100%; 
+  max-height: 100%;
+  max-width: 100%;
+}
+
+a {
+  color: #f2005b;
+}
+
+.main {
+  padding: 16px;
+}
