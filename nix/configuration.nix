@@ -128,7 +128,12 @@
 
   # k3s
   networking.firewall.allowedTCPPorts = [ 6443 ];
-  services.k3s.enable = true;
-  services.k3s.role = "server";
+  services.k3s = {
+    enable = true;
+    role = "server";
+    extraFlags = toString [ "--bind-address 100.109.114.28" ];
+  };
+
+  services.tailscale.enable = true;
 
 }
