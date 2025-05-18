@@ -127,11 +127,13 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   # k3s
+  networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 6443 ];
   services.k3s = {
     enable = true;
     role = "server";
-    extraFlags = toString [ "--bind-address 100.109.114.28" ];
+    extraFlags = toString
+      [ "--bind-address 100.109.114.28 --advertise-address 100.109.114.28" ];
   };
 
   services.tailscale.enable = true;
