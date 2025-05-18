@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
@@ -77,7 +77,7 @@
     isNormalUser = true;
     description = "camille";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    packages = [ ];
   };
 
   # Enable automatic login for the user.
@@ -132,8 +132,11 @@
   services.k3s = {
     enable = true;
     role = "server";
-    extraFlags = toString
-      [ "--bind-address 100.109.114.28 --advertise-address 100.109.114.28" ];
+    extraFlags = toString [
+      "--bind-address 100.109.114.28" # Tailscale homelab ip
+      "--advertise-address 100.109.114.28"
+      "--disable=metrics-server"
+    ];
   };
 
   services.tailscale.enable = true;
