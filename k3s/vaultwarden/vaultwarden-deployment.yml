@@ -21,6 +21,12 @@ spec:
         env:
           - name: DOMAIN
             value: "https://vw.camillevauchel.fr"
+          - name: SIGNUPS_ALLOWED
+            value: "false"
+          - name: INVITATIONS_ALLOWED
+            value: "false"
+          - name: SHOW_PASSWORD_HINT
+            value: "false"
         ports:
           - containerPort: 80
         volumeMounts:
