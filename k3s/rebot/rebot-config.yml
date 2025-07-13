@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rebot-config
+  namespace: rebot
+data:
+  RUST_LOG: "rebot=debug"
+
