@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: vaultwarden
-  name: vaultwarden-deployment
+  name: vaultwarden
   namespace: vaultwarden
 spec:
   replicas: 1

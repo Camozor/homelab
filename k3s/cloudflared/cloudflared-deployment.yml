@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: cloudflared
-  name: cloudflared-deployment
+  name: cloudflared
   namespace: cloudflared
 spec:
   replicas: 1
