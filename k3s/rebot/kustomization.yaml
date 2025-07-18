@@ -5,3 +5,4 @@ resources:
 - rebot-deployment.yml
 - rebot-secret.yml
 - rebot-config.yml
+- rebot-pvc.yml

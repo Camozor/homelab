@@ -5,4 +5,4 @@ metadata:
   namespace: rebot
 data:
   RUST_LOG: "rebot=debug"
-
+  DATABASE_PATH: "/data/db.json"

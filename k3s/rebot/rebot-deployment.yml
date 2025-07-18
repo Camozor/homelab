@@ -15,10 +15,18 @@ spec:
     spec:
       containers:
       - name: rebot
-        image: camzor/rebot
+        image: camzor/rebot:1.1.0
         envFrom:
           - configMapRef:
               name: rebot-config
           - secretRef:
               name: rebot-secret
+        volumeMounts:
+          - mountPath: /data
+            name: rebot-data
+        imagePullPolicy: IfNotPresent
+      volumes:
+        - name: rebot-data
+          persistentVolumeClaim:
+            claimName: rebot-pvc
 
