@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rebot-service
+  namespace: rebot
+spec:
+  ports:
+    - port: 8000
+      protocol: TCP
+  selector:
+    app: rebot
+

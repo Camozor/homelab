@@ -7,3 +7,5 @@ data:
   RUST_LOG: "rebot=debug"
   DATABASE_PATH: "/data/db.json"
   CRON_INTERVAL_MINUTE: "60"
+  HTTP_PORT: "8000"
+

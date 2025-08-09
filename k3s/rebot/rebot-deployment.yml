@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: rebot
-        image: camzor/rebot:1.3.0
+        image: camzor/rebot:1.4.0
         envFrom:
           - configMapRef:
               name: rebot-config
